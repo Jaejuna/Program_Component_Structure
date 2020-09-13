@@ -9,4 +9,4 @@ public class W2_Class_Practice_1 {
 
         System.out.println("have a good time");
     }
-}     
+}
