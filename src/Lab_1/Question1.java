@@ -11,10 +11,11 @@ public class Question1 {
         System.out.println("100 days ago: " + Today.minusDays(100));
 
         //오늘
-        System.out.println("Today:" + Today);
+        System.out.println("Today: " + Today);
 
         //오늘로 부터 100일 후
         System.out.println("100 days later: " + Today.plusDays(100));
     }
-
 }
+
+//Put .toString() if you need to convert the int method to string method
