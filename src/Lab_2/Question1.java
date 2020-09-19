@@ -1,14 +1,14 @@
 package Lab_2;
-import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Question1 {
     public static void main(String[] args) {
-        double k;
-        double m;
 
-        Scanner scanner = new Scanner(System.in);
-        m = scanner.nextDouble();
-        k = m * 1.60934;
-        System.out.println(m + "마일은" + k + "킬로미터 입니다.");
+        double m = Double.parseDouble(args[0]);
+        double k = m * 1.60934;
+        DecimalFormat formatter = new DecimalFormat("0.0");
+
+        System.out.println(formatter.format(m) + " 마일은 " +
+                formatter.format(k) + " 킬로미터 입니다.");
     }
 }
