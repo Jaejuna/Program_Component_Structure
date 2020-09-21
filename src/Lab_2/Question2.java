@@ -5,13 +5,6 @@ public class Question2 {
 
         int c = Integer.parseInt(args[0]);
         System.out.println("정수 = " + c );
-        int result = 1;
-
-        if (result <  c % 9){
-            System.out.println("9로 나누어지나? " + false);
-        }
-        else {
-            System.out.println("9로 나누어지나? " + true);
-        }
+        System.out.println("9로 나누어지나?" + (c % 9==0));
     }
 }
