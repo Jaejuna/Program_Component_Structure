@@ -1,4 +1,4 @@
-package Lab_1;
+package Lab.Lab_1;
 
 import java.time.*;
 

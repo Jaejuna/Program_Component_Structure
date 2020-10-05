@@ -1,4 +1,4 @@
-package Lab_1;
+package Lab.Lab_1;
 import java.time.*;
 
 //오늘, 오늘로 부터 100일 전 & 오늘로 부터 100일 후

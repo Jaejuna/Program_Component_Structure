@@ -1,4 +1,4 @@
-package Lab_3;
+package Lab.Lab_3;
 
 import javax.swing.*;
 import java.text.DecimalFormat;

@@ -1,4 +1,4 @@
-package Lab_2;
+package Lab.Lab_2;
 import java.text.DecimalFormat;
 
 public class Question1 {
