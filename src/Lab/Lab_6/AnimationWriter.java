@@ -7,14 +7,16 @@ import javax.swing.*;
 public class AnimationWriter extends JPanel { 
 	private BoxWriter box_writer;    // 상자 그리는 객체
 	private BallWriter ball_writer;  // 공 그리는 객체
+	private ObstacleWriter obs_writer;
 
 	/** Constructor AnimationWriter - 상자와 공을 그리는 View 객체를 생성
 	 * @param b - 상자 그리는 객체 
 	 * @param l - 공 그리는 객체
 	 * @param size - 프레임의 크기 */
-	public AnimationWriter(BoxWriter b, BallWriter l, int size) { 
+	public AnimationWriter(BoxWriter b, BallWriter l, ObstacleWriter o, int size) {
 		box_writer = b;
 		ball_writer = l;
+		obs_writer = o;
 		JFrame f = new JFrame();
 		f.getContentPane().add(this);
 		f.setTitle("Bounce");
@@ -28,6 +30,7 @@ public class AnimationWriter extends JPanel {
 	public void paintComponent(Graphics g) { 
 		box_writer.paintComponent(g);
 		ball_writer.paintComponent(g);
+		obs_writer.paintComponent(g);
 	}
 }
 
