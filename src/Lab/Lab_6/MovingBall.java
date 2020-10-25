@@ -10,7 +10,6 @@ public class MovingBall {
 	private int y_velocity = +2; // 속도 y축 
 
 	private Box container;
-	private ObstacleWriter obstacle;
 
 	/** Constructor MovingBall - 공 만들기
 	 * @param x_initial - 공의 중심 x 좌표
@@ -51,5 +50,20 @@ public class MovingBall {
 		y_pos = y_pos + y_velocity * time_units;
 		if (container.inVerticalContact(y_pos))
 			y_velocity = - y_velocity;
+
+		container.ball1.x_pos = container.ball1.x_pos + x_velocity * time_units;
+		container.ball2.x_pos = container.ball2.x_pos + x_velocity * time_units;
+		if (container.inHorizontalBallContact(container.ball1.x_pos, container.ball2.x_pos)){
+			container.ball1.x_velocity = - x_velocity;
+			container.ball2.x_velocity = - x_velocity;
+		}
+
+		container.ball1.y_pos = container.ball1.y_pos + y_velocity * time_units;
+		container.ball2.y_pos = container.ball2.y_pos + y_velocity * time_units;
+		if (container.inVerticalBallContact(container.ball1.y_pos, container.ball2.y_pos)){
+			container.ball1.y_velocity = - y_velocity;
+			container.ball2.y_velocity = - y_velocity;
+		}
+
 	}
 }

@@ -2,7 +2,7 @@ package Lab.Lab_6;
 
 /** BounceController - 상자 안에서 움직이는 공 제어 */
 public class BounceController {
-	private MovingBall ball_1, ball_2;  // 공 객체 (Model)
+	MovingBall ball_1, ball_2;  // 공 객체 (Model)
 	private AnimationWriter writer; // 애니메이션 객체 (Output-View)
 
 	/** Constructor BounceController 컨트롤러 초기화

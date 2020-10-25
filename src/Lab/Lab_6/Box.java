@@ -3,12 +3,15 @@ package Lab.Lab_6;
 /** Box - 공이 돌아다니는 상자 */
 public class Box { 
 	
-	private int BOX_SIZE;  // 상자의 크기 
+	private int BOX_SIZE;  // 상자의 크기
+	private ObstacleWriter Obs;
+
+	public MovingBall ball1, ball2;
 
 	/** Constructor Box - 상자 생성
 	 * @param size - 상자의 크기 */
-	public Box(int size) { 
-		BOX_SIZE = size; 
+	public Box(int size) {
+		BOX_SIZE = size;
 	}
 
 	/** inHorizontalContact - 공이 x축 방향으로 좌/우 벽에 도달 여부를 리턴 
@@ -23,6 +26,14 @@ public class Box {
 	 * @return true, 공의 y 좌표가 아래위 벽의 y 좌표와 같거나 벗어났으면 true, 그렇지 않으면 false */
 	public boolean inVerticalContact(int y_position) {
 		return (y_position < 0 ) || (y_position > BOX_SIZE);
+	}
+
+	public boolean inHorizontalBallContact(int ball1_x_position, int ball2_x_position){
+		return (ball1_x_position == ball2_x_position);
+	}
+
+	public boolean inVerticalBallContact(int ball1_y_position, int ball2_y_position){
+		return (ball1_y_position == ball2_y_position);
 	}
 
 

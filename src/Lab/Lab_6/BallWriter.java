@@ -5,8 +5,7 @@ import java.awt.*;
 /** BallWriter - 움직이는 공을 그림 */
 public class BallWriter {
 
-	private MovingBall ball_1;   // 공 객체
-	private MovingBall ball_2;
+	private MovingBall ball_1, ball_2;
 	private Color balls_color_1; // 공의 색깔
 	private Color balls_color_2;
 
