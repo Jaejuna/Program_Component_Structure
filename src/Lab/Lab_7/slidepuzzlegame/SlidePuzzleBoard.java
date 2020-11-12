@@ -52,4 +52,8 @@ public class SlidePuzzleBoard {
     public boolean found (int v, int row, int col){
         return board [row][col].valueOf() ==v;
     }
+
+    public PuzzlePiece [][] content(){
+        return board;
+    }
 }
