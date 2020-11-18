@@ -1,25 +1,11 @@
 package Lab.Lab_8;
 
-public class Key {
-	
-	private int id;
-	
-	/** */
-	public Key(int i) {
-		id = i;
-	}
-	
-	/** */
-	public boolean equals(Key k) {
-		return id == k.id();
-	}
-	
-	/** */
-	public int id() {
-		return id;
-	}
+public interface Key {
+
+    /** equals - 인수로 제공된 키와 자신과 같은지 비교; 명세 aka 간판
+     * @param k - 비교 대상 키
+     * @return - 같은면 true, 다르면 false */
+    public boolean equals (Key k);
+
 
 }
-
-
-
