@@ -16,16 +16,15 @@ public class CounterFrame extends JFrame {
         cp.setLayout(new BorderLayout());
         JPanel p1 = new JPanel(new FlowLayout());
         JPanel p2 = new JPanel(new FlowLayout());
-        JPanel p3 = new JPanel(new FlowLayout());
+
 
         p1.add(label);
         p2.add(new CountButton("COUNT", count, this));
-        p3.add(new ExitButton("EXIT", count, this));
+        p2.add(new ExitButton("EXIT", count, this));
 
         cp.add(p1, BorderLayout.NORTH);
         cp.add(drawing, BorderLayout.CENTER);
-        cp.add(p2, BorderLayout.WEST);
-        cp.add(p3, BorderLayout.EAST);
+        cp.add(p2, BorderLayout.SOUTH);
 
         setTitle("Counter");
         setSize(380,300);
