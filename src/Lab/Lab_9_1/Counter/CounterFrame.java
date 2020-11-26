@@ -27,7 +27,7 @@ public class CounterFrame extends JFrame {
         cp.add(p2, BorderLayout.SOUTH);
 
         setTitle("Counter");
-        setSize(380,300);
+        setSize(250,300);
         setVisible(true);
     }
 
