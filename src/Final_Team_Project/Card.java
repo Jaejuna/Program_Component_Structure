@@ -10,8 +10,14 @@ public class Card {
         this.suit = suit;
         this.rank = rank;
     }
+
+    /*
+     *Card생성자에서 받아온 rank가 0일 경우 11을 반환
+     * rank가 0이 아니고 10보다 작은경우 rank에 1을더한다.
+     * rank가 10이상인 경우 10을 return
+     * 그 외의 경우 0을 return
+     */
     public int valueOf(){
-        //returns the value of the Card
         if (this.rank ==0){
             return 11;
         }
@@ -25,9 +31,11 @@ public class Card {
             return 0;
         }
     }
+
+    /*
+     * Card생성자에서 받아온 int값을 ranks와 suits배열에 대입하여 문자열로 반환
+     */
     public String toString(){
-        //returns a String representing the Card in form "Ace/Three/King of Hearts"
         return ranks[this.rank] + " of " + suits[this.suit];
     }
-
 }
