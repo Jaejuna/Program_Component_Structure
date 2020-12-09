@@ -8,19 +8,19 @@ public class BlackJack{
     public Hand player;
     public Hand dealer;
     public Deck deck;
-    public BlackJackGUI GUI;
+    public BlackJackView VIEW;
     private int play = 0;
     private int hit = 0;
     private int chip =0;
     private int stand =0;
 
     public BlackJack(){
-        GUI =  new BlackJackGUI();
-        GUI.setPlayAction(new PlayAction());
-        GUI.setHitAction(new HitAction());
-        GUI.setStandAction(new StandAction());
-        GUI.setExitButton(new ExitAction());
-        GUI.enablePlayButton();
+        VIEW =  new BlackJackView();
+        VIEW.setPlayAction(new PlayAction());
+        VIEW.setHitAction(new HitAction());
+        VIEW.setStandAction(new StandAction());
+        VIEW.setExitButton(new ExitAction());
+        VIEW.enablePlayButton();
     }
 
     /*
@@ -52,10 +52,10 @@ public class BlackJack{
             dealer.add(deck.nextCard());
             player.add(deck.nextCard());
             dealer.add(deck.nextCard());
-            GUI.displayPlayer(player);
-            GUI.displayDealerCard(dealer.getTopCard());
+            VIEW.displayPlayer(player);
+            VIEW.displayDealerCard(dealer.getTopCard());
             if(!player.hasBlackJack() && !dealer.hasBlackJack() && !player.isBusted()){
-                GUI.enableHitAndStandButtons();}
+                VIEW.enableHitAndStandButtons();}
             if(player.hasBlackJack() || dealer.hasBlackJack() || player.isBusted()){
                 finishGame();
             }
@@ -71,7 +71,7 @@ public class BlackJack{
 
             if(!player.isBusted() && player.valueOf() !=21){
                 player.add(deck.nextCard());
-                GUI.displayPlayer(player);
+                VIEW.displayPlayer(player);
             }
             if(player.isBusted() || player.valueOf()==21){
                 finishGame();
@@ -100,33 +100,33 @@ public class BlackJack{
      */
     private void finishGame(){
         if(player.hasBlackJack()){
-            GUI.displayDealer(dealer);
-            GUI.displayPlayer(player);
-            GUI.displayOutcome("Win");
-            GUI.chips(2);
-            GUI.displayOutcome(String.valueOf(GUI.chip));
+            VIEW.displayDealer(dealer);
+            VIEW.displayPlayer(player);
+            VIEW.displayOutcome("Win");
+            VIEW.chips(2);
+            VIEW.displayOutcome(String.valueOf(VIEW.chip));
         }
 
         else if (dealer.hasBlackJack() && player.hasBlackJack()) {
-            GUI.displayDealer(dealer);
-            GUI.displayPlayer(player);
-            GUI.displayOutcome("Draw");
+            VIEW.displayDealer(dealer);
+            VIEW.displayPlayer(player);
+            VIEW.displayOutcome("Draw");
         }
 
         else if(dealer.hasBlackJack()){
-            GUI.displayDealer(dealer);
-            GUI.displayPlayer(player);
-            GUI.displayOutcome("Lose");
-            GUI.chips(-1);
-            GUI.displayOutcome(String.valueOf(GUI.chip));
+            VIEW.displayDealer(dealer);
+            VIEW.displayPlayer(player);
+            VIEW.displayOutcome("Lose");
+            VIEW.chips(-1);
+            VIEW.displayOutcome(String.valueOf(VIEW.chip));
         }
 
         else if (player.isBusted()){
-            GUI.displayDealer(dealer);
-            GUI.displayPlayer(player);
-            GUI.displayOutcome("Lose");
-            GUI.chips(-1);
-            GUI.displayOutcome(String.valueOf(GUI.chip));
+            VIEW.displayDealer(dealer);
+            VIEW.displayPlayer(player);
+            VIEW.displayOutcome("Lose");
+            VIEW.chips(-1);
+            VIEW.displayOutcome(String.valueOf(VIEW.chip));
         }
 
         else {
@@ -135,44 +135,44 @@ public class BlackJack{
             }
 
             if(dealer.isBusted()) {
-                GUI.displayDealer(dealer);
-                GUI.displayPlayer(player);
-                GUI.displayOutcome("Win");
-                GUI.chips(1);
-                GUI.displayOutcome(String.valueOf(GUI.chip));
+                VIEW.displayDealer(dealer);
+                VIEW.displayPlayer(player);
+                VIEW.displayOutcome("Win");
+                VIEW.chips(1);
+                VIEW.displayOutcome(String.valueOf(VIEW.chip));
             }
 
             else if (dealer.hasBlackJack()){
-                GUI.displayDealer(dealer);
-                GUI.displayPlayer(player);
-                GUI.displayOutcome("Lose");
-                GUI.chips(-1);
-                GUI.displayOutcome(String.valueOf(GUI.chip));
+                VIEW.displayDealer(dealer);
+                VIEW.displayPlayer(player);
+                VIEW.displayOutcome("Lose");
+                VIEW.chips(-1);
+                VIEW.displayOutcome(String.valueOf(VIEW.chip));
             }
 
             else if (dealer.valueOf() == player.valueOf()) {
-                GUI.displayDealer(dealer);
-                GUI.displayPlayer(player);
-                GUI.displayOutcome("Draw");
+                VIEW.displayDealer(dealer);
+                VIEW.displayPlayer(player);
+                VIEW.displayOutcome("Draw");
             }
 
             else if (dealer.valueOf() > player.valueOf()){
-                GUI.displayDealer(dealer);
-                GUI.displayPlayer(player);
-                GUI.displayOutcome("Lose");
-                GUI.chips(-1);
-                GUI.displayOutcome(String.valueOf(GUI.chip));
+                VIEW.displayDealer(dealer);
+                VIEW.displayPlayer(player);
+                VIEW.displayOutcome("Lose");
+                VIEW.chips(-1);
+                VIEW.displayOutcome(String.valueOf(VIEW.chip));
             }
 
             else if (player.valueOf() > dealer.valueOf()){
-                GUI.displayDealer(dealer);
-                GUI.displayPlayer(player);
-                GUI.displayOutcome("Win");
-                GUI.chips(1);
-                GUI.displayOutcome(String.valueOf(GUI.chip));
+                VIEW.displayDealer(dealer);
+                VIEW.displayPlayer(player);
+                VIEW.displayOutcome("Win");
+                VIEW.chips(1);
+                VIEW.displayOutcome(String.valueOf(VIEW.chip));
             }
         }
-        GUI.enablePlayButton();
+        VIEW.enablePlayButton();
     }
 
 

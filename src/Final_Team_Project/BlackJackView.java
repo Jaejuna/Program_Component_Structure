@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class BlackJackGUI extends JFrame {
+public class BlackJackView extends JFrame {
 
     private Container contentPane;
     private JPanel buttonPanel = new JPanel();
@@ -19,7 +19,7 @@ public class BlackJackGUI extends JFrame {
 
 
     //View constructor
-    public BlackJackGUI()
+    public BlackJackView()
     {
         contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
@@ -83,7 +83,7 @@ public class BlackJackGUI extends JFrame {
         dealerArea.setText("Dealer Shows:\n"+card);
     }
 
-    //칩의 개수와 게임의 결과 반환 (Win, Bust, Lose, Push)
+    //칩의 개수와 게임의 결과 반환 (Win, Bust, Lose, Draw)
     public void displayOutcome(String outcome){
         playerArea.setText(playerArea.getText() + "\n\n " + outcome);
     }

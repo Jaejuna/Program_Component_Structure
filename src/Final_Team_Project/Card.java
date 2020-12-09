@@ -11,8 +11,7 @@ public class Card {
         this.rank = rank;
     }
 
-    /*
-     *Card생성자에서 받아온 rank가 0일 경우 11을 반환
+    /*Card생성자에서 받아온 rank가 0일 경우 11을 반환
      * rank가 0이 아니고 10보다 작은경우 rank에 1을더한다.
      * rank가 10이상인 경우 10을 return
      * 그 외의 경우 0을 return
