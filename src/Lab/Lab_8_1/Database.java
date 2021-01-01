@@ -1,4 +1,4 @@
-package Lab.Lab_8;
+package Lab.Lab_8_1;
 
 public class Database {
 	
